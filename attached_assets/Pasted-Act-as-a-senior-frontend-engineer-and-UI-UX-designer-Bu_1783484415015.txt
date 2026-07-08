@@ -1,0 +1,52 @@
+Act as a senior frontend engineer and UI/UX designer. Build a modern, high-converting marketing website for a web development agency called "[AGENCY_NAME]" that builds websites and web apps for small-to-medium businesses.
+
+TECH STACK
+- Framework: Next.js 14+ (App Router), React, TypeScript
+- Styling: Tailwind CSS (utility-first, no custom CSS files unless unavoidable)
+- Animations: Framer Motion for scroll reveals, hover states, and page transitions
+- Icons: lucide-react
+- Fonts: Google Fonts — "Space Grotesk" for headings, "Inter" for body text
+- Fully responsive: mobile-first, breakpoints at sm/md/lg/xl
+- No backend needed yet — static content, forms can use placeholder submit handlers
+
+COLOR PALETTE (dark theme, tech/agency feel — use exactly these)
+- Background (primary): #0A0A0F (near-black, not pure black)
+- Background (secondary/cards): #14141C
+- Accent primary (CTA, links, highlights): #6366F1 (indigo)
+- Accent secondary (gradient partner): #EC4899 (pink) — used only in gradients, not solid fills
+- Text primary: #F5F5F7
+- Text secondary/muted: #9CA3AF
+- Border/divider: #232330
+- Success/positive states: #10B981
+
+Use the indigo→pink gradient sparingly — hero headline text, one key CTA button, and section dividers only. Everything else stays monochrome (background/text/muted) so the gradient reads as a signature, not noise.
+
+THEME / VISUAL DIRECTION
+- Dark, premium, "modern SaaS agency" aesthetic — think Linear, Vercel, or Framer's own marketing site, not a generic Bootstrap template.
+- Generous whitespace, large type scale (hero headline 56-72px desktop), high contrast.
+- Subtle grain/noise texture or soft radial gradient glow behind hero section — avoid flat solid backgrounds.
+- Rounded corners (rounded-xl / rounded-2xl) on cards and buttons, not sharp edges.
+- Micro-interactions: buttons scale slightly on hover, cards lift with shadow on hover, fade-up on scroll for each section.
+- No stock-photo clutter — prefer abstract gradient shapes, code snippets, or geometric illustrations over generic business photos.
+
+PAGE STRUCTURE (single landing page, sections in this order)
+1. Sticky nav — logo left, links (Services, Work, Process, Pricing, Contact) center/right, CTA button "Book a Call"
+2. Hero — bold headline with gradient text, one-line subheadline, two CTAs (primary solid + secondary ghost/outline), small trust row below (e.g. "Trusted by 30+ businesses" or logo strip)
+3. Services — 3-4 cards (Website Design, Web App Development, E-commerce, Maintenance/SEO), icon + short description each
+4. Process — horizontal or vertical timeline (Discover → Design → Build → Launch → Support), 4-5 steps
+5. Featured Work / Portfolio — 3 project cards with image placeholder, project name, one-line result (e.g. "+40% conversion")
+6. Why Us / Differentiators — 3-column grid (Speed, Transparent Pricing, Post-launch Support)
+7. Pricing (optional simple 3-tier layout: Starter / Growth / Custom) — if unsure on pricing, use "Starting at $X" with a "Get a custom quote" CTA instead of hard numbers
+8. Testimonials — 2-3 quote cards with name/role placeholder
+9. Final CTA section — bold closing statement + contact form (name, email, project type, message)
+10. Footer — logo, nav links repeat, social icons, copyright
+
+REQUIREMENTS
+- Every section must be a separate reusable component (Hero.tsx, Services.tsx, etc.)
+- Use Tailwind's container/max-w classes for consistent horizontal padding across sections
+- Add scroll-triggered fade-up animation to each section using Framer Motion's `whileInView`
+- Ensure the site looks intentional and finished on first load — no lorem-ipsum-looking placeholder text; write real, agency-appropriate marketing copy for every section
+- Mobile nav should collapse into a hamburger menu with slide-in drawer
+- Prioritize load speed and clean semantic HTML (proper heading hierarchy, alt text on images)
+
+Build this as a complete, working Next.js project with all components wired into the main page.
