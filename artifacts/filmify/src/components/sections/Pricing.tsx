@@ -5,26 +5,33 @@ import { Check } from "lucide-react";
 
 const tiers = [
   {
-    name: "Starter Site",
-    price: "starting at $5k",
-    desc: "High-performance marketing presence for new businesses.",
-    features: ["Custom UI/UX Design", "React/Vite Architecture", "CMS Integration", "Technical SEO Setup", "1 Month Support"],
-    popular: false
+    name: "Starter",
+    priceLabel: "PKR 30,000",
+    usdLabel: "~$2,000 USD",
+    desc: "For simple business or marketing websites.",
+    features: [
+      "Custom UI/UX design",
+      "Up to 5 pages",
+      "Mobile-responsive build",
+      "Basic technical SEO setup",
+      "1 month of post-launch support",
+    ],
+    popular: false,
   },
   {
-    name: "Growth App",
-    price: "starting at $15k",
-    desc: "Complex web applications and custom dashboards.",
-    features: ["Everything in Starter", "Authentication & Users", "Database Architecture", "3rd-Party API Integrations", "Advanced Analytics"],
-    popular: true
+    name: "Complex / Custom",
+    priceLabel: "PKR 70,000",
+    usdLabel: "~$7,000 USD",
+    desc: "For web applications, e-commerce, or multi-feature builds.",
+    features: [
+      "Everything in Starter",
+      "Web application or e-commerce build",
+      "Authentication & user accounts",
+      "Database architecture",
+      "3rd-party API integrations",
+    ],
+    popular: true,
   },
-  {
-    name: "Enterprise",
-    price: "Custom Quote",
-    desc: "For mature organizations needing scale and refactoring.",
-    features: ["Legacy Code Migration", "Custom Infrastructure", "SLA & 24/7 Support", "Dedicated Engineering Team", "Security Auditing"],
-    popular: false
-  }
 ];
 
 export default function Pricing() {
@@ -32,27 +39,30 @@ export default function Pricing() {
     <section id="pricing" className="py-24">
       <div className="container mx-auto px-6">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Simple, transparent <span className="text-indigo-400">pricing.</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Simple, transparent <span className="text-brand">pricing.</span></h2>
           <p className="text-white/60 text-lg">Invest in software that pays for itself. No hidden fees.</p>
         </FadeIn>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {tiers.map((tier, idx) => (
             <FadeIn key={idx} delay={idx * 0.1}>
-              <div className={`relative p-8 rounded-2xl border ${tier.popular ? "border-indigo-500 shadow-2xl shadow-indigo-500/10 bg-white/[0.03]" : "border-white/10 bg-white/[0.01]"} h-full flex flex-col`}>
+              <div className={`relative p-8 rounded-2xl border ${tier.popular ? "border-brand shadow-2xl shadow-brand/10 bg-white/[0.03]" : "border-white/10 bg-white/[0.01]"} h-full flex flex-col`}>
                 {tier.popular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-background text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                     Most Popular
                   </div>
                 )}
                 <h3 className="text-xl font-medium text-white/80 mb-2">{tier.name}</h3>
-                <div className="text-3xl font-bold font-mono mb-4 text-white">{tier.price}</div>
+                <div className="mb-1 flex items-baseline gap-2">
+                  <span className="text-3xl font-bold font-mono text-white">{tier.priceLabel}</span>
+                </div>
+                <div className="text-sm text-white/50 font-mono mb-4">{tier.usdLabel}</div>
                 <p className="text-white/50 text-sm mb-8">{tier.desc}</p>
                 
                 <ul className="space-y-4 mb-8 flex-1">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-white/70">
-                      <Check size={16} className="text-pink-400 mt-0.5 shrink-0" />
+                      <Check size={16} className="text-brand mt-0.5 shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -60,12 +70,9 @@ export default function Pricing() {
                 
                 <a
                   href="#contact"
-                  className={cn(
-                    buttonVariants({ variant: tier.popular ? "gradient" : "outline" }),
-                    "w-full",
-                  )}
+                  className={cn(buttonVariants({ variant: "brand" }), "w-full")}
                 >
-                  {tier.popular ? "Get Started" : "Request Quote"}
+                  {tier.popular ? "Get Started" : "Book a Call"}
                 </a>
               </div>
             </FadeIn>

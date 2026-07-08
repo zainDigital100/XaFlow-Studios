@@ -32,7 +32,7 @@ export default function Differentiators() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {items.map((item, idx) => (
             <FadeIn key={idx} delay={idx * 0.1}>
-              <item.icon className="text-pink-400 mb-6" size={32} />
+              <item.icon className="text-brand mb-6" size={32} />
               <h3 className="text-lg font-bold mb-3">{item.title}</h3>
               <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
             </FadeIn>

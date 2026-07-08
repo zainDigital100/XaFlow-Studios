@@ -11,7 +11,7 @@ import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-background min-h-screen text-foreground font-sans selection:bg-indigo-500/30">
+    <div className="bg-background min-h-screen text-foreground font-sans selection:bg-brand/30">
       <div className="noise-overlay"></div>
       <Navbar />
       <main>

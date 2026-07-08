@@ -29,7 +29,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <a href="#" className="text-2xl font-bold font-mono tracking-tighter">
-          FILMIFY<span className="text-indigo-500">.</span>
+          FILMIFY<span className="text-brand">.</span>
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
@@ -42,7 +42,7 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <a href="#contact" className={buttonVariants({ variant: "gradient" })}>
+          <a href="#contact" className={buttonVariants({ variant: "brand" })}>
             Book a Call
           </a>
         </nav>
@@ -81,7 +81,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className={cn(buttonVariants({ variant: "gradient" }), "w-full mt-4")}
+              className={cn(buttonVariants({ variant: "brand" }), "w-full mt-4")}
             >
               Book a Call
             </a>

@@ -26,7 +26,7 @@ export default function Testimonials() {
                 <Quote className="absolute top-6 right-6 text-white/5" size={64} />
                 <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 relative z-10 font-medium">"{test.quote}"</p>
                 <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-pink-500 p-0.5">
+                  <div className="w-12 h-12 rounded-full bg-brand p-0.5">
                     <div className="w-full h-full bg-background rounded-full flex items-center justify-center text-sm font-bold">
                       {test.author.charAt(0)}
                     </div>

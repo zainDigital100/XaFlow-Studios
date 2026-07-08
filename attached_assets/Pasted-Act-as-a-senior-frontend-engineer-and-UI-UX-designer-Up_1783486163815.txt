@@ -1,0 +1,39 @@
+Act as a senior frontend engineer and UI/UX designer. Update the FILMIFY agency website (Next.js + Tailwind CSS) with the following fixes:
+
+1) REMOVE ALL PINK/INDIGO GRADIENTS SITE-WIDE
+Audit every component (Hero, Process, Services, Pricing, Testimonials, Footer, buttons, badges, timeline dots, icons) and remove any gradient text, gradient fill, or gradient border. Replace with a single solid accent color used consistently everywhere:
+- Accent: #00D9C0 (signal teal)
+- Background (primary): #0A0A0A
+- Background (secondary/cards): #131313
+- Text primary: #FAFAFA
+- Text secondary/muted: #8A8A8A
+- Border/divider: #232323
+No gradients anywhere. No violet, no pink, no dual-tone text. One accent color only, applied to: CTA buttons (solid fill), hero emphasis word, logo dot, badge borders, timeline markers, active/highlighted pricing tier, link hover states.
+
+2) SERVICE SCOPE — WEB DEVELOPMENT ONLY
+Remove any implication of multiple service categories (no "App Development," "E-commerce," "SEO/Marketing" as separate offerings). Restructure the Services section to reflect ONE core service — Web Development — broken into sub-offerings/packages instead of separate services:
+- Business Websites (marketing sites, portfolios, landing pages)
+- Web Applications (dashboards, internal tools, SaaS-style products)
+- E-commerce Websites (if still relevant, frame as a web dev deliverable, not a separate service line)
+Rewrite all headline/subheadline copy across the site (hero, services, footer) to say "web development" / "websites and web apps" — remove any language suggesting branding, marketing, mobile app, or design-only services.
+
+3) FIX BROKEN PROCESS TIMELINE UI
+The current timeline is broken: cards are staggered/offset with inconsistent widths, and the connector dot sits ON TOP of card text instead of beside it on a clean vertical line. Rebuild this section properly:
+- Structure: a single vertical line (border-l or a positioned div) running down the left side (or center, if desktop layout allows a centered timeline)
+- Each phase card sits at a FIXED horizontal offset — no staggering/zigzag unless intentionally designed with equal alternating left/right offsets and matching card widths
+- The connector dot must be positioned OUTSIDE the card, centered exactly on the vertical line, using a flex or grid layout (e.g., flex row with a fixed-width dot column + card column) — not absolute positioning guessed by eyeballing coordinates
+- All cards must have equal width and consistent padding
+- Card content: "Phase 0X" label (accent color, monospace font) → bold title → 2-3 line description — this content is fine, only fix positioning/layout
+- Use Framer Motion whileInView for a subtle fade-up per phase card as user scrolls
+- Test at mobile width: timeline should collapse to a single-column stack with the line and dots on the left edge only
+
+4) PRICING SECTION — PKR + USD
+Replace pricing content with a simple 2-tier structure, each tier showing BOTH currencies (PKR primary, USD as secondary/smaller text, or a toggle/switch between them — your choice, but both must be visible or accessible):
+- Starter: PKR 30,000 (~$2,000 USD) — for simple business/marketing websites
+- Complex/Custom: PKR 70,000 (~$7,000 USD) — for web applications, e-commerce, or multi-feature builds
+Layout: two cards side by side (stack on mobile), each with: tier name, price (PKR bold/large, USD smaller beneath or in parentheses), 4-5 bullet points of what's included, and a "Get Started" / "Book a Call" CTA button (solid accent, no gradient). If a currency toggle is preferred instead of showing both simultaneously, implement a simple switch (PKR/USD) above the pricing cards that updates both card values on click.
+
+GENERAL
+- Keep the dark, technical, premium aesthetic (Linear/Vercel-style) — only fix the specific issues above
+- Do not introduce new colors, gradients, or design patterns not specified here
+- Ensure all layout fixes use proper Flexbox/Grid, not absolute positioning with guessed pixel values
