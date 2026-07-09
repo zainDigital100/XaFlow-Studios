@@ -1,4 +1,5 @@
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import showcaseHero from "@/assets/showcase-hero.png";
 
 export default function ShowcaseScroll() {
   return (
@@ -19,7 +20,7 @@ export default function ShowcaseScroll() {
         }
       >
         <img
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80&auto=format&fit=crop"
+          src={showcaseHero}
           alt="Product dashboard preview"
           height={720}
           width={1400}
