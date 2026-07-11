@@ -2,7 +2,6 @@ import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
-import ShowcaseScroll from "@/components/sections/ShowcaseScroll";
 import Portfolio from "@/components/sections/Portfolio";
 import Differentiators from "@/components/sections/Differentiators";
 import Pricing from "@/components/sections/Pricing";
@@ -19,7 +18,6 @@ export default function Home() {
         <Hero />
         <Services />
         <Process />
-        <ShowcaseScroll />
         <Portfolio />
         <Differentiators />
         <Pricing />
