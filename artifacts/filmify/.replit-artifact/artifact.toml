@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "Filmify"
+title = "XaFlow"
 version = "1.0.0"
 id = "artifacts/filmify"
 router = "path"
