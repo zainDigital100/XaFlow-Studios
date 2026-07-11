@@ -28,7 +28,7 @@ export default function Differentiators() {
   return (
     <section className="py-24 border-y border-white/5 bg-white/[0.01]" aria-labelledby="differentiators-heading">
       <div className="container mx-auto px-6">
-        <h2 id="differentiators-heading" className="sr-only">Why teams choose Filmify</h2>
+        <h2 id="differentiators-heading" className="sr-only">Why teams choose XaFlow Studios</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {items.map((item, idx) => (
             <FadeIn key={idx} delay={idx * 0.1}>

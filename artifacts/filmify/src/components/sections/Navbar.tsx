@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import xaflowLogo from "@/assets/xaflow-logo.jpeg";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,8 +29,9 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#" className="text-2xl font-bold font-mono tracking-tighter">
-          FILMIFY<span className="text-brand">.</span>
+        <a href="#" className="flex items-center gap-2.5">
+          <img src={xaflowLogo} alt="XaFlow Studios logo" className="w-9 h-9 rounded-md object-cover" />
+          <span className="text-xl font-bold font-mono tracking-tighter">XaFlow<span className="text-brand">.</span></span>
         </a>
         
         <nav className="hidden md:flex items-center gap-8">

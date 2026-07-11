@@ -3,7 +3,7 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Filmify completely rescued our web app rebuild. We had burned 6 months with a cheap offshore team. Filmify stepped in, audited the mess, and shipped a flawless V2 in 8 weeks.",
+    quote: "XaFlow Studios completely rescued our web app rebuild. We had burned 6 months with a cheap offshore team. XaFlow stepped in, audited the mess, and shipped a flawless V2 in 8 weeks.",
     author: "Sarah Jenkins",
     role: "Founder, Quantify"
   },
