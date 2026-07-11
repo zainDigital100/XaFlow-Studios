@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link, useLocation } from "wouter";
 import xaflowLogo from "@/assets/xaflow-logo.jpeg";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -15,11 +17,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Process", href: "#process" },
-    { name: "Work", href: "#work" },
-    { name: "Pricing", href: "#pricing" },
+    { name: "Services", href: "/services" },
+    { name: "Process", href: "/process" },
+    { name: "Work",     href: "/work" },
+    { name: "Pricing",  href: "/pricing" },
   ];
 
   return (
@@ -29,24 +36,27 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center gap-2.5">
           <img src={xaflowLogo} alt="XaFlow Studios logo" className="w-9 h-9 rounded-md object-cover" />
           <span className="text-xl font-bold font-mono tracking-tighter">XaFlow<span className="text-brand">.</span></span>
-        </a>
-        
+        </Link>
+
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+              className={cn(
+                "text-sm font-medium transition-colors",
+                location === link.href ? "text-brand" : "text-white/70 hover:text-white"
+              )}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" className={buttonVariants({ variant: "brand" })}>
+          <Link href="/contact" className={buttonVariants({ variant: "brand" })}>
             Book a Call
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -71,22 +81,23 @@ export default function Navbar() {
             className="absolute top-20 left-0 right-0 bg-background border-b border-white/10 p-6 flex flex-col gap-4 md:hidden"
           >
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-medium text-white/80 hover:text-white"
+                className={cn(
+                  "text-lg font-medium",
+                  location === link.href ? "text-brand" : "text-white/80 hover:text-white"
+                )}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
+            <Link
+              href="/contact"
               className={cn(buttonVariants({ variant: "brand" }), "w-full mt-4")}
             >
               Book a Call
-            </a>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

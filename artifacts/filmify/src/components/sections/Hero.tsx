@@ -13,7 +13,7 @@ export default function Hero() {
         <FadeIn delay={0.1}>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-brand mb-8">
             <Code2 size={14} />
-            <span>Senior Engineering Studio</span>
+            <span>XaFlow Studios</span>
           </div>
         </FadeIn>
         
@@ -33,13 +33,13 @@ export default function Hero() {
 
         <FadeIn delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <a
-            href="#contact"
+            href="/contact"
             className={cn(buttonVariants({ variant: "brand", size: "lg" }), "w-full sm:w-auto gap-2")}
           >
             Book a Strategy Call <ArrowRight size={18} />
           </a>
           <a
-            href="#work"
+            href="/work"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "w-full sm:w-auto border-white/10 text-white hover:bg-white/5",

@@ -69,7 +69,7 @@ export default function Pricing() {
                 </ul>
                 
                 <a
-                  href="#contact"
+                  href="/contact"
                   className={cn(buttonVariants({ variant: "brand" }), "w-full")}
                 >
                   {tier.popular ? "Get Started" : "Book a Call"}
