@@ -5,7 +5,7 @@ const projects = [
   {
   title: "Emberr Jewelery",
   description: "At ember, we believe that jewellery transcends mere ornamentation—it embodies your most precious moments, your unique essence, and your timeless story.",
-  image: "/projects/restaurant.webp",
+  image: "/assets/emberr.png",
   tags: ["React", "Tailwind", "Vite"],
   liveUrl: "https://emberr.netlify.app/",
 },
