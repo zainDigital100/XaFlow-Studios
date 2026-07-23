@@ -4,7 +4,8 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
   title: "Emberr Jewelery",
-  description: "At ember, we believe that jewellery transcends mere ornamentation—it embodies your most precious moments, your unique essence, and your timeless story.",
+  category: "Buisness Website"
+  desc: "At ember, we believe that jewellery transcends mere ornamentation—it embodies your most precious moments, your unique essence, and your timeless story.",
   image: "/assets/emberr.webp",
   tags: ["React", "Tailwind", "Vite"],
   liveUrl: "https://emberr.netlify.app/",
