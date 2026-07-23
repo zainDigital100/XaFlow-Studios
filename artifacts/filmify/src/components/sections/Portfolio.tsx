@@ -3,11 +3,12 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Nexus Logistics Portal",
-    category: "Custom Web Application",
-    metric: "Replaced 5 legacy systems",
-    desc: "A real-time tracking dashboard and driver management system built with React and Node.js.",
-  },
+  title: "Emberr Jewelery",
+  description: "At ember, we believe that jewellery transcends mere ornamentation—it embodies your most precious moments, your unique essence, and your timeless story.",
+  image: "/projects/restaurant.webp",
+  tags: ["React", "Tailwind", "Vite"],
+  liveUrl: "https://emberr.netlify.app/",
+},
   {
     title: "Aura Boutique",
     category: "E-Commerce Website",
